@@ -1,17 +1,29 @@
 {
-    "inicio": {
-      "mensagem": "Bem-vindo! Escolha uma opção:\n1 - Cliente\n2 - Não cliente",
-      "opcoes": {
-        "1": "cliente",
-        "2": "nao_cliente"
-      }
-    },
-    "cliente": {
-      "mensagem": "Escolha o setor:\n1 - Comercial\n2 - Financeiro\n3 - Suporte",
-      "opcoes": {
-        "1": "comercial",
-        "2": "financeiro",
-        "3": "suporte"
-      }
+  "inicio": {
+    "mensagem": "Bem-vindo! Escolha uma opção:\n1 - Cliente\n2 - Não cliente",
+    "opcoes": {
+      "1": "cliente",
+      "2": "nao_cliente"
     }
+  },
+  "cliente": {
+    "mensagem": "Escolha o setor:\n1 - Comercial\n2 - Financeiro\n3 - Suporte",
+    "opcoes": {
+      "1": "comercial",
+      "2": "financeiro",
+      "3": "suporte"
+    }
+  },
+  "comercial": {
+    "mensagem": "Você escolheu o setor Comercial! Em breve um atendente irá falar com você."
+  },
+  "financeiro": {
+    "mensagem": "Você escolheu o setor Financeiro! Aguarde atendimento."
+  },
+  "suporte": {
+    "mensagem": "Você escolheu o Suporte! Vamos te ajudar."
+  },
+  "nao_cliente": {
+    "mensagem": "Por favor, entre em contato com nosso setor comercial para se tornar cliente."
   }
+}

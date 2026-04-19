@@ -1,0 +1,20 @@
+# dependências
+node_modules/
+
+# variáveis de ambiente
+.env
+
+# sessões do WhatsApp (CRÍTICO)
+sessions/
+
+# build (futuro)
+dist/
+
+# sistema
+.DS_Store
+Thumbs.db
+
+# arquivos estranhos gerados pelo whatsapp/chromium
+*.h*
+*.tmp
+*.log

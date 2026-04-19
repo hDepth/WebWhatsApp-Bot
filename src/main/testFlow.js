@@ -1,32 +1,24 @@
 const FlowEngine = require('../application/services/FlowEngine');
-
-const flow = {
-  inicio: {
-    mensagem: 'Bem-vindo!\n1 - Cliente\n2 - Não cliente',
-    opcoes: {
-      '1': 'cliente',
-      '2': 'nao_cliente'
-    }
-  },
-  cliente: {
-    mensagem: 'Escolha o setor:\n1 - Comercial\n2 - Financeiro\n3 - Suporte',
-    opcoes: {
-      '1': 'comercial',
-      '2': 'financeiro',
-      '3': 'suporte'
-    }
-  },
-  comercial: {
-    mensagem: 'Você escolheu comercial!',
-  }
-};
+const UserStateService = require('../application/services/UserStateService');
+const flow = require('../flows/defaultFlow.json');
 
 const engine = new FlowEngine(flow);
+const userState = new UserStateService();
 
-// Simulação
-let state = 'inicio';
+const phone = '11999999999';
 
-console.log(engine.process(state, '1')); // cliente
-state = 'cliente';
+// Usuário manda primeira mensagem
+let currentState = userState.getState(phone);
+let response = engine.process(currentState, '1');
 
-console.log(engine.process(state, '2')); // financeiro
+console.log('Resposta 1:', response);
+
+userState.setState(phone, response.nextStep);
+
+// Próxima interação
+currentState = userState.getState(phone);
+response = engine.process(currentState, '2');
+
+console.log('Resposta 2:', response);
+
+userState.setState(phone, response.nextStep);
