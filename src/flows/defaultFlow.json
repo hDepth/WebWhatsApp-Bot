@@ -1,0 +1,17 @@
+{
+    "inicio": {
+      "mensagem": "Bem-vindo! Escolha uma opção:\n1 - Cliente\n2 - Não cliente",
+      "opcoes": {
+        "1": "cliente",
+        "2": "nao_cliente"
+      }
+    },
+    "cliente": {
+      "mensagem": "Escolha o setor:\n1 - Comercial\n2 - Financeiro\n3 - Suporte",
+      "opcoes": {
+        "1": "comercial",
+        "2": "financeiro",
+        "3": "suporte"
+      }
+    }
+  }
