@@ -33,14 +33,14 @@ O foco principal está na construção de uma base sólida, escalável e bem est
 O sistema foi estruturado seguindo princípios de separação de responsabilidades, inspirado em Clean Architecture:
 
 
-src/
-├── application/
-├── domain/
-├── infrastructure/
-├── interface/
-├── flows/
-├── shared/
-└── main/
+src/  
+  ├── application/  
+  ├── domain/  
+  ├── infrastructure/  
+  ├── interface/  
+  ├── flows/  
+  ├── shared/  
+  └── main/  
 
 
 Essa organização permite:
