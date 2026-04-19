@@ -1,19 +1,19 @@
 const express = require('express');
 const WhatsAppClient = require('../infrastructure/whatsapp/whatsappClient');
+const MessageHandler = require('../application/services/MessageHandler');
 
 const app = express();
-
 app.use(express.json());
 
-// inicia bot
-new WhatsAppClient();
+const handler = new MessageHandler();
+
+// injeta o cérebro no bot
+new WhatsAppClient((message) => handler.handle(message));
 
 app.get('/', (req, res) => {
   res.send('API rodando 🚀');
 });
 
-const PORT = 3000;
-
-app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
+app.listen(3000, () => {
+  console.log('Servidor rodando na porta 3000');
 });

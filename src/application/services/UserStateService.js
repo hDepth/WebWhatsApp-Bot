@@ -1,22 +1,15 @@
 class UserStateService {
-    constructor() {
-      this.states = new Map();
+    constructor(repository) {
+      this.repository = repository;
     }
   
-    getState(phone) {
-      return this.states.get(phone) || 'inicio';
+    async getState(phone) {
+      const state = await this.repository.getByPhone(phone);
+      return state || 'inicio';
     }
   
-    setState(phone, step) {
-      this.states.set(phone, step);
-    }
-  
-    resetState(phone) {
-      this.states.set(phone, 'inicio');
-    }
-  
-    clearState(phone) {
-      this.states.delete(phone);
+    async setState(phone, step) {
+      await this.repository.save(phone, step);
     }
   }
   
